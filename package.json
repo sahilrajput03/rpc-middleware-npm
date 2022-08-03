@@ -1,10 +1,10 @@
 {
   "name": "rpc-middleware-npm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-	  "roll": "git add . && git commit -m 'update'; npm version patch && npm publish && git push"
+    "roll": "git add . && git commit -m 'update'; npm version patch && npm publish && git push"
   },
   "keywords": [],
   "author": "",
