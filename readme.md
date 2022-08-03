@@ -106,4 +106,4 @@ function createRpc(url) {
 }
 ```
 
-Congrats if you ran all above code. Thanks for trying it out. Conside starring the [sahilrajput03/context-maker-npm.git](https://github.com/sahilrajput03/context-maker-npm.git)** repository to appreciate my works.
+Congrats if you ran all above code. Thanks for trying it out. Conside starring the **[sahilrajput03/context-maker-npm.git](https://github.com/sahilrajput03/context-maker-npm.git)** repository to appreciate my works.

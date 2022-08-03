@@ -10,7 +10,7 @@
 		"type": "git",
 		"url": "https://github.com/sahilrajput03/rpc-middleware-npm"
 	},
-	"keywords": [],
+	"keywords": ["node-rpc", "rpc", "express-rpc", "express", "rpc-server"],
 	"author": "",
 	"license": "ISC"
 }
