@@ -1,12 +1,16 @@
 {
-  "name": "rpc-middleware",
-  "version": "1.0.4",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "roll": "git add . && git commit -m 'update'; npm version patch && npm publish && git push"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "rpc-middleware",
+	"version": "1.0.4",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"roll": "git add . && git commit -m 'update'; npm version patch && npm publish && git push"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sahilrajput03/rpc-middleware-npm"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }
