@@ -10,9 +10,9 @@ const createRpcPostRoute = (route, funcs, app) => {
 
 	const functionMiddleware = (req, res) => {
 		const fnName = req.params[fnNameKey]
-		log({fnNameKey})
+		// log({fnNameKey})
 		// log({fnName})
-		log(req.body) // req.body will always be an array coz we are using `...payload` to receive all arguments when the function is called in frontend.
+		// log(req.body) // req.body will always be an array coz we are using `...payload` to receive all arguments when the function is called in frontend.
 
 		try {
 			// Send 403 error if client called an invalid function
