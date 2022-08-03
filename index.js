@@ -18,14 +18,19 @@ const createRpcPostRoute = (route, funcs, app) => {
 			// Send 403 error if client called an invalid function
 			if (!Object.keys(funcs).includes(fnName)) {
 				const availableFunctions = Object.keys(funcs).join(', ')
-				return res.status(403).send({error: `${fnName} function does not exist in rpc's collection of function, please check the function name. Please use one of these functions: ${availableFunctions}.`})
+				// The HTTP 404 Not Found response status code indicates that the server cannot find the requested resource.
+				return res.status(404).send({error: `${fnName} function does not exist in rpc's collection of function, please check the function name. Please use one of these functions: ${availableFunctions}.`})
 			}
 
 			const responseBody = funcs[fnName](...req.body)
 			res.json(responseBody)
 			return
-		} catch (error) {
-			res.send(error)
+		} catch (e) {
+			log(`ERROR OCCURED WHEN FUNCTION: ${fnName}(..) CALLED WITH ARGUMENTS:`, req.body)
+			log(e)
+			const err = {name: e.name, message: e.message}
+			// The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (for example, malformed request syntax, invalid request message framing, or deceptive request routing).
+			res.status(400).json(err)
 			return
 		}
 	}
