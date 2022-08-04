@@ -1,12 +1,11 @@
 const log = console.log
 
-// Get string of length 5
-const getRandomText = () => Math.random().toString(36).slice(2, 7)
-
 const createRpcPostRoute = (route, funcs, app) => {
 	// Get text after : in the route
 	// const fnNameKey = route.split(':')[1]
-	const fnNameKey = getRandomText()
+
+	// Use a fixed parameter name for the route
+	const fnNameKey = 'functionName'
 
 	const functionMiddleware = (req, res) => {
 		const fnName = req.params[fnNameKey]

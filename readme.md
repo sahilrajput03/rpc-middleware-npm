@@ -4,11 +4,11 @@
 
 ## Why?
 
-**STOP hustle of naming endpoints points and request types (get/post/put/delete/etc) and simply start calling functions (you make in server) from frontend directly.**
+**STOP hustle of naming endpoints points and request types (get/post/put/delete/etc) in your existing projects and simply start calling functions (you make in server) from frontend directly.**
 
 Easy to incorporate into existing projects so you can focus simply calling server functions.
 
-**Github: [https://github.com/sahilrajput03/context-maker-npm.git](https://github.com/sahilrajput03/context-maker-npm.git)**
+**Github: [https://github.com/sahilrajput03/rpc-middleware-npm](https://github.com/sahilrajput03/rpc-middleware-npm)**
 
 ## Get Started
 
@@ -83,7 +83,6 @@ try {
 	const respData = 'error.response.data.error: ' + error.response.data.error
 	console.log(errStatus + ', ' + respData)
 }
-
 
 // Utility function to create our rpc client
 function createRpc(url) {
