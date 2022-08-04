@@ -22,14 +22,19 @@ const createRpcPostRoute = (route, funcs, app) => {
 			}
 
 			const responseBody = funcs[fnName](...req.body)
-			res.json(responseBody)
+			res.status(responseBody.status || 200).json(responseBody)
 			return
 		} catch (e) {
 			log(`ERROR OCCURED WHEN FUNCTION: ${fnName}(..) CALLED WITH ARGUMENTS:`, req.body)
 			log(e)
-			const err = {name: e.name, message: e.message}
-			// The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (for example, malformed request syntax, invalid request message framing, or deceptive request routing).
-			res.status(400).json(err)
+
+			// Since .stack property of error cannot be serialized so we send only `name` and `message` property only. `e.stack` property only exist if some error thrown was created with syntax ```new Error('..')```
+			if (!e.stack) {
+				res.status(e.status || 400).json(e)
+			} else {
+				// The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (for example, malformed request syntax, invalid request message framing, or deceptive request routing).
+				res.status(400).json({name: e.name, message: e.message})
+			}
 			return
 		}
 	}
