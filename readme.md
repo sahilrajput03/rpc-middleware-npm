@@ -16,9 +16,10 @@ All below code is already deployed @ **live demo: [https://rpc-demo.herokuapp.co
 
 **On server:**
 
-Create two files: `server.js` and `server-functions.js` like below.
+Create two files: `server-functions.js` and `server.js` like below.
 
 ```js
+// File: server-function.js
 module.exports.test = () => 'works!'
 
 // string as parameter
@@ -46,6 +47,7 @@ module.exports.rain = (name1, name2) => {
 and
 
 ```js
+// File: server.js
 const express = require('express')
 const createRpcPostRoute = require('rpc-middleware')
 
