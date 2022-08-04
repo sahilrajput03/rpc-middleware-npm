@@ -66,15 +66,20 @@ and thats it for the server and you may start the server by running `node server
 
 **On frontend (react/vue/angular/vanilla/etc):**
 
+Make sure you have imported axios (or included axios via cdn), then
+
 ```js
 // STEP1: Setup RPC client
 const rpc = createRpc('/rpc')
 
-// STEP2: Call functions now
+// STEP2: Call functions now (`res` is an axios response)
 const res = await rpc.test()
 const res = await rpc.yoy('God loves all')
 const res = await rpc.cat({say: 'meoww'})
 const res = await rpc.love('donald', 'pikachu')
+
+// logging response data
+console.log(res.data) 
 
 try {
 	const res = await rpc.someNonExistingFunction('pokemons')
