@@ -42,8 +42,9 @@ and
 
 ```js
 const express = require('express')
-const fns = require('./server-functions')
 const createRpcPostRoute = require('rpc-middleware')
+
+const fns = require('./server-functions')
 
 const PORT = 8080
 const app = express()
@@ -79,7 +80,7 @@ const res = await rpc.cat({say: 'meoww'})
 const res = await rpc.love('donald', 'pikachu')
 
 // logging response data
-console.log(res.data) 
+console.log(res.data)
 
 try {
 	const res = await rpc.someNonExistingFunction('pokemons')
