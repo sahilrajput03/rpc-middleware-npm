@@ -85,19 +85,15 @@ console.log(res.data)
 try {
 	const res = await rpc.someNonExistingFunction('pokemons')
 } catch (error) {
-	const errStatus = 'error.response.status: ' + error.response.status
-	const errName = 'error.response.data.name: ' + error.response.data.name
-	const errMessage = 'error.response.data.message: ' + error.response.data.message
-	log([errStatus, errName, errMessage].join('\n\n'))
+	const {name, message, status} = error
+	log('CAUGHT ERROR: \n' + ['name: ' + name, 'message: ' + message, 'status: ' + status].join('\n\n'))
 }
 
 try {
 	const res = await rpc.rain('Charlizard', 'Nobita')
 } catch (error) {
-	const errStatus = 'error.response.status: ' + error.response.status
-	const errName = 'error.response.data.name: ' + error.response.data.name
-	const errMessage = 'error.response.data.message: ' + error.response.data.message
-	log([errStatus, errName, errMessage].join('\n\n'))
+	const {name, message, status} = error
+	log('CAUGHT ERROR: \n' + ['name: ' + name, 'message: ' + message, 'status: ' + status].join('\n\n'))
 }
 
 // Utility function to create our rpc client
