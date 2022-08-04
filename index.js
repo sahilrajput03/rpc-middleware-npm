@@ -18,7 +18,7 @@ const createRpcPostRoute = (route, funcs, app) => {
 			if (!Object.keys(funcs).includes(fnName)) {
 				const availableFunctions = Object.keys(funcs).join(', ')
 				// The HTTP 404 Not Found response status code indicates that the server cannot find the requested resource.
-				return res.status(404).send({error: `${fnName} function does not exist in rpc's collection of function, please check the function name. Please use one of these functions: ${availableFunctions}.`})
+				return res.status(404).send({name: 'invalid function name', message: `${fnName} function does not exist in rpc's collection of function, please check the function name. Please use one of these functions: ${availableFunctions}.`})
 			}
 
 			const responseBody = funcs[fnName](...req.body)
