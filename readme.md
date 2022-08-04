@@ -109,18 +109,15 @@ function createRpc(url) {
 	const handler = {
 		get(target, prop) {
 			return async (...functionParams) => {
-				// log(`functionName?:${prop}, functionParams:${functionParams}`)
-				// Send `functionParams` as body for the request
-				// Make sure that end `route` looks like: `/rpcv1/:fnParam`. And *not* like `/rpcv1:fnParam` coz that causes route mismatch.
 				if (!url.endsWith('/')) {
 					url = url + '/'
 				}
-				return await axios.post(`${url}${prop}`, functionParams)
+				return await axios.post(`${url}${prop}`, functionParams).catch((e) => {
+					throw {...e.response.data, status: e.response.status}
+				})
 			}
 		},
 	}
-
-	return new Proxy(target, handler)
 }
 ```
 
