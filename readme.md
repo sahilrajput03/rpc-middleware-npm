@@ -112,9 +112,12 @@ function createRpc(url) {
 				if (!url.endsWith('/')) {
 					url = url + '/'
 				}
-				return await axios.post(`${url}${prop}`, functionParams).catch((e) => {
-					throw {...e.response.data, status: e.response.status}
-				})
+				return await axios
+					.post(`${url}${prop}`, functionParams)
+					.then((response) => response.data)
+					.catch((e) => {
+						throw {...e.response.data, status: e.response.status}
+					})
 			}
 		},
 	}
