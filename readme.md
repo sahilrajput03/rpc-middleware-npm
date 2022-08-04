@@ -12,7 +12,7 @@ Easy to incorporate into existing projects so you can focus simply calling serve
 
 ## Get Started
 
-All below code is already deployed @ **live demo: [https://rpc-demo.herokuapp.com](https://rpc-demo.herokuapp.com), Source Code: [Click here](https://github.com/sahilrajput03/learn-rpc-middlewares/tree/main/my-rpc)**
+All below code is already deployed @ **[live demo](https://rpc-demo.herokuapp.com), Source Code: [Click here](https://github.com/sahilrajput03/learn-rpc-middlewares/tree/main/my-rpc)**
 
 **On server:**
 
@@ -124,4 +124,4 @@ function createRpc(url) {
 }
 ```
 
-Congrats if you ran all above code. Thanks for trying it out. Conside starring the **[sahilrajput03/context-maker-npm.git](https://github.com/sahilrajput03/context-maker-npm.git)** repository to appreciate my works.
+Congrats if you ran all above code. Thanks for trying it out. Conside starring the **[https://github.com/sahilrajput03/rpc-middleware-npm](https://github.com/sahilrajput03/rpc-middleware-npm)** repository to appreciate my works.
