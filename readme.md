@@ -40,6 +40,7 @@ module.exports.love = (name1, name2) => {
 module.exports.rain = (name1, name2) => {
 	const messg = `${name1} does not like ${name2}`
 	let err = {name: 'RAIN AWAY', message: 'SUN DOWN'}
+}
 ```
 
 and
