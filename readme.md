@@ -36,6 +36,10 @@ module.exports.cat = (body) => {
 module.exports.love = (name1, name2) => {
 	return `God loves: ${name1} and ${name2}`
 }
+// on error rpc send status: 400 (BAD REQUEST) and body as `err`
+module.exports.rain = (name1, name2) => {
+	const messg = `${name1} does not like ${name2}`
+	let err = {name: 'RAIN AWAY', message: 'SUN DOWN'}
 ```
 
 and
